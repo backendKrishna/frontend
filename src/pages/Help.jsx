@@ -269,7 +269,7 @@ const [searchQuery, setSearchQuery] = useState("");
 
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/subscriber")
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/api/subscriber`)
     .then((res) => res.json())
     .then((resData) => {
       setSubscribers(resData.data || []); // ✅ extract array safely
@@ -395,7 +395,7 @@ useEffect(() => {
           onSubmit={(e) => {
             e.preventDefault();
             if (email) {
-              fetch("http://localhost:5000/api/subscriber", {
+              fetch(`${import.meta.env.VITE_BACKEND_URL}/api/subscriber`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
