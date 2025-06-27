@@ -18,8 +18,9 @@ export default function Footer() {
     }
 
     // fetch("http://localhost:5000/api/subscriber", {
-    fetch("http://backend-l374.onrender.com/api/subscriber", {
+    // fetch("http://backend-l374.onrender.com/api/subscriber", {
 
+fetch(`${import.meta.env.VITE_BACKEND_URL}/api/subscriber`, {
 
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -110,7 +110,10 @@ export default function Deals() {
   // Load all deals (no pagination)
   useEffect(() => {
     axios
-      .get("http://backend-l374.onrender.com/api/deals")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/deals`)
+
+
+
       .then((res) => setDeals(res.data.data || res.data))
       .catch((err) => console.error("❌ Error fetching deals:", err));
   }, []);

@@ -13,7 +13,13 @@ export default function Contact() {
       return;
     }
 
-    fetch("http://backend-l374.onrender.com/api/contact", {
+    // fetch("http://backend-l374.onrender.com/api/contact", {
+
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, {
+
+   
+
+
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

@@ -105,7 +105,7 @@ const PaymentPage = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://backend-l374.onrender.com/api/bookings",
+       `${import.meta.env.VITE_BACKEND_URL}/api/bookings`,
         {
           departureFlightId,
           returnFlightId,
