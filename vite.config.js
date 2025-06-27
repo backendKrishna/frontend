@@ -4,5 +4,8 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  
+  build: {
+    outDir: 'build', // 👈 important: so Render finds it
+  },
+  base: './', // for relative paths
 })
