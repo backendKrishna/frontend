@@ -694,7 +694,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/airports?search=")
+      .get("http://backend-l374.onrender.com/api/airports?search=")
       .then((res) => {
         const airportList = Array.isArray(res.data.data)
           ? res.data.data
@@ -708,7 +708,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/deals?page=1&perPage=3")
+      .get("http://backend-l374.onrender.com/api/deals?page=1&perPage=3")
       .then((res) => setDeals(res.data.data))
       .catch((err) => console.error("❌ Error fetching deals:", err));
   }, []);
@@ -720,7 +720,7 @@ export default function Home() {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/visitors", {
+      await axios.post("http://backend-l374.onrender.com/api/visitors", {
         ...form,
         travelers,
       });
@@ -966,7 +966,7 @@ export default function Home() {
 
     setError(""); // Clear any existing error
 
-    fetch("http://localhost:5000/api/subscriber", {
+    fetch("http://backend-l374.onrender.com/api/subscriber", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

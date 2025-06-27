@@ -1720,7 +1720,7 @@ export default function Flights() {
   useEffect(() => {
     if (form?.from && form?.to) {
       axios
-        .get(`http://localhost:5000/api/flights?from=${form.from}&to=${form.to}`)
+        .get(`http://backend-l374.onrender.com/api/flights?from=${form.from}&to=${form.to}`)
         .then((res) => {
           let data = res.data?.data || res.data;
           if (Array.isArray(data)) {
@@ -1733,7 +1733,7 @@ export default function Flights() {
 
       if (isRoundTrip && form.returnDate) {
         axios
-          .get(`http://localhost:5000/api/flights?from=${form.to}&to=${form.from}`)
+          .get(`http://backend-l374.onrender.com/api/flights?from=${form.to}&to=${form.from}`)
           .then((res) => {
             let data = res.data?.data || res.data;
             if (Array.isArray(data)) {
@@ -1774,7 +1774,7 @@ export default function Flights() {
     if (isRoundTrip && !selectedReturn) return alert("Please select a return flight.");
 
     try {
-      await axios.post("http://localhost:5000/api/bookings", {
+      await axios.post("http://backend-l374.onrender.com/api/bookings", {
         departureFlightId: selectedDeparture,
         returnFlightId: isRoundTrip ? selectedReturn : null,
         ...passenger,

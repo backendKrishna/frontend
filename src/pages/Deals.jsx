@@ -110,7 +110,7 @@ export default function Deals() {
   // Load all deals (no pagination)
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/deals")
+      .get("http://backend-l374.onrender.com/api/deals")
       .then((res) => setDeals(res.data.data || res.data))
       .catch((err) => console.error("❌ Error fetching deals:", err));
   }, []);

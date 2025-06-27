@@ -16,7 +16,7 @@ export default function Bookings() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/bookings?page=${page}&perPage=5`)
+      .get(`http://backend-l374.onrender.com/api/bookings?page=${page}&perPage=5`)
       .then((res) => {
         setBookings(res.data.data || []);
         setTotalPages(res.data.totalPages || 1);

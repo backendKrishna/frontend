@@ -17,7 +17,10 @@ export default function Footer() {
       return;
     }
 
-    fetch("http://localhost:5000/api/subscriber", {
+    // fetch("http://localhost:5000/api/subscriber", {
+    fetch("http://backend-l374.onrender.com/api/subscriber", {
+
+
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
