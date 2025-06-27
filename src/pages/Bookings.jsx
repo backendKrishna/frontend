@@ -29,7 +29,7 @@ export default function Bookings() {
   const goToPage = (newPage) => {
     setSearchParams({ page: newPage });
   };
-
+console.log("✅ BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
 
 const handlePrintRedirect = (booking) => {
   const confirm = window.confirm("Are you sure you want to confirm and print this booking?");
